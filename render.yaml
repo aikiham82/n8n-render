@@ -35,7 +35,7 @@ services:
       - key: WEBHOOK_URL
         value: https://n8n-1bx2.onrender.com
       - key: N8N_ENCRYPTION_KEY
-        value: YOUR_ENCRYPTION_KEY_HERE
+        value: w8r#LcM7Fx2!qnK93zJv@XksZtL1c*RY
       - key: GENERIC_TIMEZONE
         value: Europe/Madrid
       - key: TZ
