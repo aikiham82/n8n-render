@@ -5,6 +5,17 @@
 
 set -euo pipefail
 
+# Check if Docker is installed and running
+if ! command -v docker &> /dev/null; then
+  echo "Error: Docker is not installed. Please install Docker before running this script."
+  exit 1
+fi
+
+if ! docker info &> /dev/null; then
+  echo "Error: Docker daemon is not running. Please start the Docker service before running this script."
+  exit 1
+fi
+
 # Configuration
 EXPORT_DIR="${1:-n8n-export-$(date +%Y%m%d-%H%M%S)}"
 DATA_FOLDER="${DATA_FOLDER:-/home/node/.n8n}"
