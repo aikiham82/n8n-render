@@ -1,50 +1,13 @@
 services:
   - type: web
     name: n8n
-    env: docker
     region: oregon
     plan: standard
     branch: main
     numInstances: 1
     healthCheckPath: /
-    envVars:
-      - key: DB_TYPE
-        value: postgresdb
-      - key: DB_POSTGRESDB_HOST
-        value: db.riokegjfknyvycmifrqv.supabase.co
-      - key: DB_POSTGRESDB_PORT
-        value: 5432
-      - key: DB_POSTGRESDB_DATABASE
-        value: postgres
-      - key: DB_POSTGRESDB_USER
-        value: postgres
-      - key: DB_POSTGRESDB_PASSWORD
-        value: DkaLQN64lT99OS7O
-      - key: DB_POSTGRESDB_SCHEMA
-        value: public
-      - key: WEBHOOK_URL
-        value: https://n8n-1bx2.onrender.com
-      - key: N8N_ENCRYPTION_KEY
-        value: w8r#LcM7Fx2!qnK93zJv@XksZtL1c*RY
-      - key: GENERIC_TIMEZONE
-        value: Europe/Madrid
-      - key: TZ
-        value: Europe/Madrid
-      - key: N8N_LOG_LEVEL
-        value: info
-      - key: EXECUTIONS_DATA_PRUNE
-        value: true
-      - key: EXECUTIONS_DATA_MAX_AGE
-        value: 168
-      - key: EXECUTIONS_DATA_SAVE_ON_ERROR
-        value: all
-      - key: EXECUTIONS_DATA_SAVE_ON_SUCCESS
-        value: none
-      - key: EXECUTIONS_DATA_SAVE_ON_PROGRESS
-        value: false
-      - key: EXECUTIONS_DATA_SAVE_MANUAL_EXECUTIONS
-        value: false
     disk:
       name: n8n-disk
       mountPath: /home/node/.n8n
       sizeGB: 5
+    runtime: docker
