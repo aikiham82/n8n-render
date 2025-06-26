@@ -17,6 +17,13 @@ echo "Data folder: $DATA_FOLDER"
 # Create backup directory if it doesn't exist
 mkdir -p "$BACKUP_ROOT"
 
+# Validate N8N_ENCRYPTION_KEY
+if [[ -z "${N8N_ENCRYPTION_KEY:-}" ]]; then
+  echo "Warning: N8N_ENCRYPTION_KEY is not set. This may cause issues with encrypted data."
+  # Uncomment the line below to exit with error instead of just warning
+  # exit 1
+fi
+
 # Run the export
 docker run --rm \
     -v "$DATA_FOLDER:/home/node/.n8n:ro" \
