@@ -10,6 +10,13 @@ EXPORT_DIR="${1:-n8n-export-$(date +%Y%m%d-%H%M%S)}"
 DATA_FOLDER="${DATA_FOLDER:-/home/node/.n8n}"
 BACKUP_ROOT="${BACKUP_ROOT:-/backup}"
 
+# Validate encryption key
+if [[ -z "${N8N_ENCRYPTION_KEY:-}" ]]; then
+  echo "Warning: N8N_ENCRYPTION_KEY is not set. This may cause issues with encrypted data."
+  # Uncomment the following line to exit with error instead of just warning
+  # exit 1
+fi
+
 echo "Starting n8n workflow export..."
 echo "Export directory: $EXPORT_DIR"
 echo "Data folder: $DATA_FOLDER"
