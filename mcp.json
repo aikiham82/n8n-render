@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "n8n-mcp": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--init",
+        "-e", "MCP_MODE=stdio",
+        "-e", "LOG_LEVEL=error",
+        "-e", "DISABLE_CONSOLE_OUTPUT=true",
+        "-e", "N8N_API_URL=https://n8n-759468254318.europe-west1.run.app",
+        "-e", "N8N_API_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOTBkMTVkNi0wMWVkLTQzNDktYTI5YS0yNzBiMmM1NTk0YzEiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzU2NzI4NjYwfQ.AJnXF55VC_91x9bXuUXyXpuW1MBDR63DBe-87kvstKk",
+        "ghcr.io/czlonkowski/n8n-mcp:latest"
+      ]
+    }
+  }
+}
